@@ -4,11 +4,11 @@ local Creator = loadstring(game:HttpGet(
 
 local Workspace = game:GetService("Workspace")
 
---// Silence Configuration
+--// Create Silence
 local entity = Creator.createEntity({
     CustomName = "Silence",
 
-    Model = "https://github.com/Ilikerobloxdoors/Nightmare-Silence/blob/main/Nightmare%20Silence.rbxm",
+    Model = "https://raw.githubusercontent.com/Ilikerobloxdoors/Nightmare-Silence/main/Nightmare%20Silence.rbxm",
 
     Speed = 100,
     DelayTime = 0,
@@ -101,7 +101,7 @@ entity.Debug.OnDeath = function(entityTable)
     warn("A player died to Silence!")
 end
 
---// Break all currently loaded room lights
+--// Break lights before Silence spawns
 local rooms = Workspace:FindFirstChild("CurrentRooms")
 
 if rooms then
@@ -117,9 +117,9 @@ if rooms then
     end
 end
 
-print("All currently loaded room lights have been broken!")
+print("Silence: Lights broken!")
 
---// Wait, then spawn Silence
+--// Wait 1.7 seconds, then spawn Silence
 task.wait(1.7)
 
 Creator.runEntity(entity)
